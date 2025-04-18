@@ -1,5 +1,7 @@
 ﻿
 using MayneFaniWindowsForm.Authentication;
+using System.Net.Sockets;
+using System.Net;
 
 namespace MayneFaniWindowsForm
 {
@@ -11,6 +13,11 @@ namespace MayneFaniWindowsForm
         public string UserType { get; set; }
         public string LoginDate { get; set; }
         public string BaseName { get; set; }
+        public static string ShiftId { get; set; }
+
+        public static string DeviceIp { get; set; }
+        public string BaseNO { get; set; }
+
 
         private Authentication.Authentication auth;
         public LoginFrm()
@@ -23,6 +30,35 @@ namespace MayneFaniWindowsForm
         private void LoginBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public string GenerateShiftId()
+        {
+            ShiftId = DateTime.Now.ToString("yy-mm-dd") + DeviceIp + BaseNO;
+
+            if(ShiftId is not null)
+            {
+                return ShiftId;
+            }
+            MessageBox.Show("خطا در تولید شناسه شیفت");
+            return null;
+        }
+
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    DeviceIp = ip.ToString();
+                    return ip.ToString(); 
+                }
+            }
+
+            MessageBox.Show("خطا در ارتباط شبکه");
+            return null;
         }
     }
 }

@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MayneFaniWindowsForm
+{
+    public partial class Main : Form
+    {
+        public Main()
+        {
+            InitializeComponent();
+        }
+
+        int UserType { get; set; }
+        string BaseName { get; set; }
+        string NEtworkStatus { get; set; }
+
+        string Company_Name = "سازمان معاینه فنی خودرو تهران بزرگ";
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+
+    }
+}

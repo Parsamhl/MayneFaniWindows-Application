@@ -12,7 +12,7 @@ namespace MayneFaniWindowsForm
         public string UserType { get; set; }
         public string LoginDate { get; set; }
         public string BaseName { get; set; }
-        public static string ShiftId { get; set; }
+        public static string ShiftId = "";
 
         public static string DeviceIp { get; set; }
         public string BaseNO { get; set; }
@@ -28,7 +28,10 @@ namespace MayneFaniWindowsForm
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-
+            GenerateShiftId();
+            Main main = new Main();
+            main.ShiftId = ShiftId;
+            MessageBox.Show("", ShiftId,MessageBoxButtons.OK);
         }
 
         public string GenerateShiftId()

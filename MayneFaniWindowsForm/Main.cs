@@ -16,6 +16,7 @@ namespace MayneFaniWindowsForm
         string BaseName { get; set; }
         string NEtworkStatus { get; set; }
         string ConnectionString { get; set; }
+        public string ShiftId { get; set; }
 
         string Company_Name = "سازمان معاینه فنی خودرو تهران بزرگ";
 

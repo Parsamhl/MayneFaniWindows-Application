@@ -12,17 +12,19 @@ namespace MayneFaniWindowsForm
 {
     public partial class Main : Form
     {
+        int UserType { get; set; }
+        string BaseName { get; set; }
+        string NEtworkStatus { get; set; }
+        string ConnectionString { get; set; }
+
+        string Company_Name = "سازمان معاینه فنی خودرو تهران بزرگ";
+
         public Main()
         {
             InitializeComponent();
         }
 
-        int UserType { get; set; }
-        string BaseName { get; set; }
-        string NEtworkStatus { get; set; }
-
-        string Company_Name = "سازمان معاینه فنی خودرو تهران بزرگ";
-
+       
         private void Main_Load(object sender, EventArgs e)
         {
             

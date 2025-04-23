@@ -8,8 +8,7 @@ namespace MayneFaniWindowsForm
     public partial class LoginFrm : Form
     {
 
-        public string UserName { get; set; }
-        public string Password { get; set; }
+       
         public string UserType { get; set; }
         public string LoginDate { get; set; }
         public string BaseName { get; set; }
@@ -53,7 +52,7 @@ namespace MayneFaniWindowsForm
                 if (ip.AddressFamily == AddressFamily.InterNetwork)
                 {
                     DeviceIp = ip.ToString();
-                    return ip.ToString(); 
+                    return DeviceIp.ToString(); 
                 }
             }
 

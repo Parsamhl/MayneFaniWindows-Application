@@ -35,6 +35,7 @@ namespace MayneFaniWindowsForm
                 GenerateShiftId();
                 Main main = new Main();
                 main.ShiftId = ShiftId;
+                main.DeviceIp = DeviceIp;
                 this.Hide();
                 MessageBox.Show(ShiftId, "شناسه شیفت", MessageBoxButtons.OK);
                 main.Show();

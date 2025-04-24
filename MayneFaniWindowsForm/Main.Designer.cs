@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            userTypetxt = new TextBox();
+            BaseNametxt = new TextBox();
+            NetworkStatus = new TextBox();
             button1 = new Button();
             button2 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
@@ -65,26 +67,29 @@
             label3.TabIndex = 2;
             label3.Text = "نام مرکز :";
             // 
-            // textBox2
+            // userTypetxt
             // 
-            textBox2.Location = new Point(178, 30);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(223, 23);
-            textBox2.TabIndex = 4;
+            userTypetxt.Enabled = false;
+            userTypetxt.Location = new Point(178, 30);
+            userTypetxt.Name = "userTypetxt";
+            userTypetxt.Size = new Size(223, 23);
+            userTypetxt.TabIndex = 4;
             // 
-            // textBox3
+            // BaseNametxt
             // 
-            textBox3.Location = new Point(178, 155);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(223, 23);
-            textBox3.TabIndex = 5;
+            BaseNametxt.Enabled = false;
+            BaseNametxt.Location = new Point(178, 155);
+            BaseNametxt.Name = "BaseNametxt";
+            BaseNametxt.Size = new Size(223, 23);
+            BaseNametxt.TabIndex = 5;
             // 
-            // textBox4
+            // NetworkStatus
             // 
-            textBox4.Location = new Point(178, 89);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(223, 23);
-            textBox4.TabIndex = 6;
+            NetworkStatus.Enabled = false;
+            NetworkStatus.Location = new Point(178, 89);
+            NetworkStatus.Name = "NetworkStatus";
+            NetworkStatus.Size = new Size(223, 23);
+            NetworkStatus.TabIndex = 6;
             // 
             // button1
             // 
@@ -104,6 +109,12 @@
             button2.Text = "بستن شیفت";
             button2.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 150000;
+            timer1.Tick += timer1_Tick;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -111,9 +122,9 @@
             ClientSize = new Size(452, 450);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(NetworkStatus);
+            Controls.Add(BaseNametxt);
+            Controls.Add(userTypetxt);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -129,10 +140,11 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox userTypetxt;
+        private TextBox BaseNametxt;
+        private TextBox NetworkStatus;
         private Button button1;
         private Button button2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

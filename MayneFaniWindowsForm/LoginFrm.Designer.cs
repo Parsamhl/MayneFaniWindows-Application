@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            userNametxt = new TextBox();
+            passwordtxt = new TextBox();
             label2 = new Label();
             LoginBtn = new Button();
             SuspendLayout();
@@ -44,19 +44,19 @@
             label1.TabIndex = 0;
             label1.Text = "شناسه کاربر";
             // 
-            // textBox1
+            // userNametxt
             // 
-            textBox1.Location = new Point(98, 132);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(208, 23);
-            textBox1.TabIndex = 1;
+            userNametxt.Location = new Point(98, 132);
+            userNametxt.Name = "userNametxt";
+            userNametxt.Size = new Size(208, 23);
+            userNametxt.TabIndex = 1;
             // 
-            // textBox2
+            // passwordtxt
             // 
-            textBox2.Location = new Point(98, 242);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(208, 23);
-            textBox2.TabIndex = 2;
+            passwordtxt.Location = new Point(98, 242);
+            passwordtxt.Name = "passwordtxt";
+            passwordtxt.Size = new Size(208, 23);
+            passwordtxt.TabIndex = 2;
             // 
             // label2
             // 
@@ -84,11 +84,12 @@
             ClientSize = new Size(367, 415);
             Controls.Add(LoginBtn);
             Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(passwordtxt);
+            Controls.Add(userNametxt);
             Controls.Add(label1);
             Name = "LoginFrm";
             Text = "LoginFrm";
+            Load += LoginFrm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -96,8 +97,8 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox userNametxt;
+        private TextBox passwordtxt;
         private Label label2;
         private Button LoginBtn;
     }

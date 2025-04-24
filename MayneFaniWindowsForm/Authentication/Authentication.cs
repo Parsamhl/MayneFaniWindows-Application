@@ -20,6 +20,7 @@ namespace MayneFaniWindowsForm.Authentication
             {
                 if (user.UserName == userName && user.Password == password)
                 {
+                    CurrentUser.OnlineUser = user;
                     return true;
 
                 }
